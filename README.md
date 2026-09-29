@@ -21,7 +21,7 @@ LicenseHub regulates and tracks all core operations for issuing and managing dri
 
 ## 🗄️ Database Architecture
 
-The system is backed by a fully normalized relational database design modeled in [`ProjectDesign.drawio`](ProjectDesign.drawio).
+The system is backed by a fully normalized relational database design modeled in [`docs/ProjectDesign.drawio`](docs/ProjectDesign.drawio) and scripted in [`database/DVLD_Database.sql`](database/DVLD_Database.sql).
 
 ```mermaid
 erDiagram
@@ -90,9 +90,25 @@ erDiagram
 
 ---
 
+## 📁 Repository Structure
+
+```text
+LicenseHub/
+├── database/
+│   └── DVLD_Database.sql          # Complete DDL & seed data script for SQL Server / SSMS
+├── docs/
+│   ├── DVLD - Project 1 - Requirements v1.docx.pdf  # Project specifications & business rules
+│   └── ProjectDesign.drawio       # Relational database architecture model
+├── src/                           # Source code (DAL, BLL, UI layers)
+├── .gitignore                     # Visual Studio & SQL Server ignore rules
+└── README.md                      # Project documentation and architecture guide
+```
+
+---
+
 ## 🚀 Getting Started & Roadmap
 
-1. **Database Scripting:** Generate DDL schema scripts (`CREATE TABLE`, constraints, indexes, foreign keys) from `ProjectDesign.drawio`.
-2. **Data Access Layer (DAL):** Implement repository and database helper patterns (CRUD stored procedures and ADO.NET / Dapper / EF Core queries).
-3. **Business Logic Layer (BLL):** Implement business rules (age validation, test prerequisites, detention checks, license expiration calculations).
-4. **Presentation Layer (UI):** Build user interfaces for desktop (Windows Forms / WPF) or modern web.
+1. [x] **Database Scripting:** Generate DDL schema scripts (`CREATE TABLE`, constraints, indexes, foreign keys, and seed data) from `ProjectDesign.drawio` & requirements. (Available in `database/DVLD_Database.sql`).
+2. [ ] **Data Access Layer (DAL):** Implement repository and database helper patterns (CRUD stored procedures and ADO.NET / Dapper / EF Core queries).
+3. [ ] **Business Logic Layer (BLL):** Implement business rules (age validation, test prerequisites, detention checks, license expiration calculations).
+4. [ ] **Presentation Layer (UI):** Build user interfaces for desktop (Windows Forms / WPF) or modern web.
