@@ -1,44 +1,7 @@
-﻿USE master;
-GO
-
-IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'DVLD')
-BEGIN
-    CREATE DATABASE DVLD;
-END
+CREATE DATABASE DVLD;
 GO
 
 USE DVLD;
-GO
-
--- ============================================================================
--- 1. DDL: TABLE DEFINITIONS
--- ============================================================================
-
--- Drop tables if they already exist (reverse dependency order)
-IF OBJECT_ID('FK_RetakeTestOrders_TestAppointments', 'F') IS NOT NULL
-    ALTER TABLE RetakeTestOrders DROP CONSTRAINT FK_RetakeTestOrders_TestAppointments;
-IF OBJECT_ID('FK_TestAppointments_RetakeTestOrders', 'F') IS NOT NULL
-    ALTER TABLE TestAppointments DROP CONSTRAINT FK_TestAppointments_RetakeTestOrders;
-GO
-
-IF OBJECT_ID('Tests', 'U') IS NOT NULL DROP TABLE Tests;
-IF OBJECT_ID('TestAppointments', 'U') IS NOT NULL DROP TABLE TestAppointments;
-IF OBJECT_ID('RetakeTestOrders', 'U') IS NOT NULL DROP TABLE RetakeTestOrders;
-IF OBJECT_ID('LicenseServiceOrders', 'U') IS NOT NULL DROP TABLE LicenseServiceOrders;
-IF OBJECT_ID('NewLicenseOrders', 'U') IS NOT NULL DROP TABLE NewLicenseOrders;
-IF OBJECT_ID('InternationalLicenses', 'U') IS NOT NULL DROP TABLE InternationalLicenses;
-IF OBJECT_ID('DetainedLicenses', 'U') IS NOT NULL DROP TABLE DetainedLicenses;
-IF OBJECT_ID('DrivingLicenses', 'U') IS NOT NULL DROP TABLE DrivingLicenses;
-IF OBJECT_ID('Drivers', 'U') IS NOT NULL DROP TABLE Drivers;
-IF OBJECT_ID('ServiceOrders', 'U') IS NOT NULL DROP TABLE ServiceOrders;
-IF OBJECT_ID('Users', 'U') IS NOT NULL DROP TABLE Users;
-IF OBJECT_ID('People', 'U') IS NOT NULL DROP TABLE People;
-IF OBJECT_ID('Countries', 'U') IS NOT NULL DROP TABLE Countries;
-IF OBJECT_ID('LicenseIssueReasons', 'U') IS NOT NULL DROP TABLE LicenseIssueReasons;
-IF OBJECT_ID('TestTypes', 'U') IS NOT NULL DROP TABLE TestTypes;
-IF OBJECT_ID('OrderStatuses', 'U') IS NOT NULL DROP TABLE OrderStatuses;
-IF OBJECT_ID('LicenseClasses', 'U') IS NOT NULL DROP TABLE LicenseClasses;
-IF OBJECT_ID('Services', 'U') IS NOT NULL DROP TABLE Services;
 GO
 
 CREATE TABLE Countries (
