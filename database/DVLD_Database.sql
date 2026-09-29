@@ -1,7 +1,7 @@
 ﻿USE master;
 GO
 
-IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = N'DVLD')
+IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'DVLD')
 BEGIN
     CREATE DATABASE DVLD;
 END
@@ -207,54 +207,54 @@ GO
 
 SET IDENTITY_INSERT OrderStatuses ON;
 INSERT INTO OrderStatuses (OrderStatusID, Status) VALUES
-(1, N'New'),
-(2, N'Cancelled'),
-(3, N'Completed');
+(1, 'New'),
+(2, 'Cancelled'),
+(3, 'Completed');
 SET IDENTITY_INSERT OrderStatuses OFF;
 
 SET IDENTITY_INSERT Services ON;
 INSERT INTO Services (ServiceID, ServiceName, Cost) VALUES
-(1, N'New Local Driving License Service', 15.0000),
-(2, N'Renew Driving License Service', 10.0000),
-(3, N'Replacement for a Lost Driving License Service', 20.0000),
-(4, N'Replacement for a Damaged Driving License Service', 20.0000),
-(5, N'Release Detained Driving License Service', 15.0000),
-(6, N'New International License Service', 20.0000),
-(7, N'Retake Test Service', 5.0000);
+(1, 'New Local Driving License Service', 15.0000),
+(2, 'Renew Driving License Service', 10.0000),
+(3, 'Replacement for a Lost Driving License Service', 20.0000),
+(4, 'Replacement for a Damaged Driving License Service', 20.0000),
+(5, 'Release Detained Driving License Service', 15.0000),
+(6, 'New International License Service', 20.0000),
+(7, 'Retake Test Service', 5.0000);
 SET IDENTITY_INSERT Services OFF;
 
 SET IDENTITY_INSERT LicenseClasses ON;
 INSERT INTO LicenseClasses (LicenseClassID, ClassName, ClassDescription, MinimumAllowedAge, ValidityLength, ClassFees) VALUES
-(1, N'Class 1 - Small Motorcycle', N'Allows the driver to drive small motorcycles with limited capacity and power.', 18, 5, 15.0000),
-(2, N'Class 2 - Heavy Motorcycle License', N'Allows the driver to drive large and heavy motorcycles.', 21, 5, 30.0000),
-(3, N'Class 3 - Ordinary driving license', N'Allows the driver to drive personal vehicles and light vehicles.', 18, 10, 20.0000),
-(4, N'Class 4 - Commercial', N'Allows the driver to drive taxi and limousine vehicles.', 21, 10, 200.0000),
-(5, N'Class 5 - Agricultural', N'Allows the driver to drive tractors and agricultural machinery.', 21, 10, 50.0000),
-(6, N'Class 6 - Small and medium bus', N'Allows the driver to drive small and medium-sized buses.', 21, 10, 250.0000),
-(7, N'Class 7 - Truck and heavy vehicle', N'Allows the driver to drive large trucks and heavy transport vehicles.', 21, 10, 300.0000);
+(1, 'Class 1 - Small Motorcycle', 'Allows the driver to drive small motorcycles with limited capacity and power.', 18, 5, 15.0000),
+(2, 'Class 2 - Heavy Motorcycle License', 'Allows the driver to drive large and heavy motorcycles.', 21, 5, 30.0000),
+(3, 'Class 3 - Ordinary driving license', 'Allows the driver to drive personal vehicles and light vehicles.', 18, 10, 20.0000),
+(4, 'Class 4 - Commercial', 'Allows the driver to drive taxi and limousine vehicles.', 21, 10, 200.0000),
+(5, 'Class 5 - Agricultural', 'Allows the driver to drive tractors and agricultural machinery.', 21, 10, 50.0000),
+(6, 'Class 6 - Small and medium bus', 'Allows the driver to drive small and medium-sized buses.', 21, 10, 250.0000),
+(7, 'Class 7 - Truck and heavy vehicle', 'Allows the driver to drive large trucks and heavy transport vehicles.', 21, 10, 300.0000);
 SET IDENTITY_INSERT LicenseClasses OFF;
 
 SET IDENTITY_INSERT TestTypes ON;
 INSERT INTO TestTypes (TestTypeID, TestTypeName, Cost, Description) VALUES
-(1, N'Vision Test', 10.0000, N'Medical eye examination to verify driver visual acuity and fitness.'),
-(2, N'Written (Theory) Test', 20.0000, N'Theoretical exam on road signs, safe driving principles, and traffic laws.'),
-(3, N'Practical (Street) Test', 30.0000, N'Field driving examination to assess driver vehicle handling and road safety compliance.');
+(1, 'Vision Test', 10.0000, 'Medical eye examination to verify driver visual acuity and fitness.'),
+(2, 'Written (Theory) Test', 20.0000, 'Theoretical exam on road signs, safe driving principles, and traffic laws.'),
+(3, 'Practical (Street) Test', 30.0000, 'Field driving examination to assess driver vehicle handling and road safety compliance.');
 SET IDENTITY_INSERT TestTypes OFF;
 
 SET IDENTITY_INSERT LicenseIssueReasons ON;
 INSERT INTO LicenseIssueReasons (IssueReasonID, ReasonTitle) VALUES
-(1, N'First Time'),
-(2, N'Renew'),
-(3, N'Replacement for Damaged'),
-(4, N'Replacement for Lost');
+(1, 'First Time'),
+(2, 'Renew'),
+(3, 'Replacement for Damaged'),
+(4, 'Replacement for Lost');
 SET IDENTITY_INSERT LicenseIssueReasons OFF;
 
 SET IDENTITY_INSERT Countries ON;
 INSERT INTO Countries (CountryID, CountryName) VALUES
-(1, N'Jordan'), (2, N'Palestine'), (3, N'Saudi Arabia'), (4, N'Egypt'), (5, N'United Arab Emirates'),
-(6, N'Kuwait'), (7, N'Qatar'), (8, N'Bahrain'), (9, N'Oman'), (10, N'Lebanon'),
-(11, N'Syria'), (12, N'Iraq'), (13, N'Morocco'), (14, N'Tunisia'), (15, N'Algeria'),
-(16, N'United States'), (17, N'United Kingdom'), (18, N'Canada'), (19, N'Germany'), (20, N'France');
+(1, 'Jordan'), (2, 'Palestine'), (3, 'Saudi Arabia'), (4, 'Egypt'), (5, 'United Arab Emirates'),
+(6, 'Kuwait'), (7, 'Qatar'), (8, 'Bahrain'), (9, 'Oman'), (10, 'Lebanon'),
+(11, 'Syria'), (12, 'Iraq'), (13, 'Morocco'), (14, 'Tunisia'), (15, 'Algeria'),
+(16, 'United States'), (17, 'United Kingdom'), (18, 'Canada'), (19, 'Germany'), (20, 'France');
 SET IDENTITY_INSERT Countries OFF;
 GO
 
@@ -264,25 +264,25 @@ GO
 
 SET IDENTITY_INSERT People ON;
 INSERT INTO People (PersonID, NationalID, FirstName, SecondName, ThirdName, LastName, BirthDate, Gender, Address, Phone, Email, NationalityCountryID, ImagePath) VALUES
-(1, N'N1001', N'Omar', N'Khaled', N'Ahmad', N'Al-Masri', '1990-05-14', 0, N'Wasfi Al-Tal St, Amman', N'+962791112233', N'omar.masri@licensehub.jo', 1, NULL),
-(2, N'N1002', N'Fatima', N'Zahra', N'Mahmoud', N'Khatib', '1988-11-20', 1, N'University St, Irbid', N'+962782223344', N'fatima.khatib@licensehub.jo', 1, NULL),
-(3, N'N1003', N'Yousef', N'Ibrahim', N'Hassan', N'Tarawneh', '1995-03-22', 0, N'Al-Madina Al-Monawara St, Amman', N'+962773334455', N'yousef.t@licensehub.jo', 1, NULL),
-(4, N'N1004', N'Rania', N'Sami', N'Tareq', N'Majali', '1992-09-08', 1, N'King Abdullah II St, Zarqa', N'+962794445566', N'rania.majali@licensehub.jo', 1, NULL),
-(5, N'N1005', N'Ahmad', N'Saleh', N'Mustafa', N'Qudah', '1985-07-19', 0, N'Yarmouk Highway, Jerash', N'+962785556677', N'ahmad.qudah@licensehub.jo', 1, NULL),
-(6, N'N1006', N'Tariq', N'Ziad', N'Faris', N'Hadidi', '1993-01-30', 0, N'Mecca St, Amman', N'+962797778899', N'tariq.hadidi@gmail.com', 1, NULL),
-(7, N'N1007', N'Huda', N'Munir', N'Bassem', N'Abbadi', '1996-06-17', 1, N'Queen Rania St, Amman', N'+962788889900', N'huda.abbadi@gmail.com', 1, NULL),
-(8, N'N1008', N'Kareem', N'Nasser', N'Suleiman', N'Dweik', '1991-04-11', 0, N'Zahran St, Amman', N'+962779990011', N'kareem.dweik@yahoo.com', 1, NULL),
-(9, N'N1009', N'Sarah', N'Adnan', N'Fouad', N'Jabari', '2000-08-25', 1, N'Baghdad St, Zarqa', N'+962790001122', N'sarah.jabari@hotmail.com', 1, NULL),
-(10, N'N1010', N'Hamza', N'Bilal', N'Rashid', N'Shawish', '2002-10-15', 0, N'Palestine St, Irbid', N'+962781113355', N'hamza.s@gmail.com', 1, NULL),
-(11, N'N1011', N'Dina', N'Emad', N'Kamel', N'Barakat', '2001-05-20', 1, N'Gardens St, Amman', N'+962796668800', N'dina.barakat@gmail.com', 1, NULL),
-(12, N'N1012', N'Rami', N'Ayman', N'Tayseer', N'Husseini', '1989-12-14', 0, N'Main St, Ramallah', N'+970599112233', N'rami.husseini@palnet.com', 2, NULL);
+(1, 'N1001', 'Omar', 'Khaled', 'Ahmad', 'Al-Masri', '1990-05-14', 0, 'Wasfi Al-Tal St, Amman', '+962791112233', 'omar.masri@licensehub.jo', 1, NULL),
+(2, 'N1002', 'Fatima', 'Zahra', 'Mahmoud', 'Khatib', '1988-11-20', 1, 'University St, Irbid', '+962782223344', 'fatima.khatib@licensehub.jo', 1, NULL),
+(3, 'N1003', 'Yousef', 'Ibrahim', 'Hassan', 'Tarawneh', '1995-03-22', 0, 'Al-Madina Al-Monawara St, Amman', '+962773334455', 'yousef.t@licensehub.jo', 1, NULL),
+(4, 'N1004', 'Rania', 'Sami', 'Tareq', 'Majali', '1992-09-08', 1, 'King Abdullah II St, Zarqa', '+962794445566', 'rania.majali@licensehub.jo', 1, NULL),
+(5, 'N1005', 'Ahmad', 'Saleh', 'Mustafa', 'Qudah', '1985-07-19', 0, 'Yarmouk Highway, Jerash', '+962785556677', 'ahmad.qudah@licensehub.jo', 1, NULL),
+(6, 'N1006', 'Tariq', 'Ziad', 'Faris', 'Hadidi', '1993-01-30', 0, 'Mecca St, Amman', '+962797778899', 'tariq.hadidi@gmail.com', 1, NULL),
+(7, 'N1007', 'Huda', 'Munir', 'Bassem', 'Abbadi', '1996-06-17', 1, 'Queen Rania St, Amman', '+962788889900', 'huda.abbadi@gmail.com', 1, NULL),
+(8, 'N1008', 'Kareem', 'Nasser', 'Suleiman', 'Dweik', '1991-04-11', 0, 'Zahran St, Amman', '+962779990011', 'kareem.dweik@yahoo.com', 1, NULL),
+(9, 'N1009', 'Sarah', 'Adnan', 'Fouad', 'Jabari', '2000-08-25', 1, 'Baghdad St, Zarqa', '+962790001122', 'sarah.jabari@hotmail.com', 1, NULL),
+(10, 'N1010', 'Hamza', 'Bilal', 'Rashid', 'Shawish', '2002-10-15', 0, 'Palestine St, Irbid', '+962781113355', 'hamza.s@gmail.com', 1, NULL),
+(11, 'N1011', 'Dina', 'Emad', 'Kamel', 'Barakat', '2001-05-20', 1, 'Gardens St, Amman', '+962796668800', 'dina.barakat@gmail.com', 1, NULL),
+(12, 'N1012', 'Rami', 'Ayman', 'Tayseer', 'Husseini', '1989-12-14', 0, 'Main St, Ramallah', '+970599112233', 'rami.husseini@palnet.com', 2, NULL);
 SET IDENTITY_INSERT People OFF;
 
 SET IDENTITY_INSERT Users ON;
 INSERT INTO Users (UserID, PersonID, UserName, Password, IsActive, Permissions) VALUES
-(1, 1, N'admin', N'admin123', 1, -1),
-(2, 2, N'fatima.k', N'fatima123', 1, -1),
-(3, 3, N'yousef.t', N'yousef123', 1, 15);
+(1, 1, 'admin', 'admin123', 1, -1),
+(2, 2, 'fatima.k', 'fatima123', 1, -1),
+(3, 3, 'yousef.t', 'yousef123', 1, 15);
 SET IDENTITY_INSERT Users OFF;
 
 SET IDENTITY_INSERT Drivers ON;
@@ -321,13 +321,13 @@ INSERT INTO NewLicenseOrders (OrderID, LicenseClassID) VALUES
 
 SET IDENTITY_INSERT DrivingLicenses ON;
 INSERT INTO DrivingLicenses (LicenseID, OrderID, LicenseClassID, IssueDate, ExpirationDate, IssueReasonID, DriverID, Notes, CreatedBy, IsActive, Cost) VALUES
-(1, 1, 3, '2023-01-15 10:30:00', '2033-01-15 10:30:00', 1, 1, N'First time issuance.', 1, 0, 20.0000), -- Renewed by #6
-(2, 2, 3, '2023-02-10 11:15:00', '2033-02-10 11:15:00', 1, 2, N'Corrective lenses required.', 2, 0, 20.0000), -- Replaced by #7
-(3, 3, 1, '2023-03-05 09:45:00', '2028-03-05 09:45:00', 1, 3, N'Small motorcycle.', 3, 1, 15.0000),
-(4, 4, 3, '2023-04-12 14:20:00', '2033-04-12 14:20:00', 1, 4, N'Standard vehicle license.', 1, 1, 20.0000),
-(5, 5, 2, '2023-05-18 08:30:00', '2028-05-18 08:30:00', 1, 5, N'Heavy motorcycle certified.', 2, 1, 30.0000),
-(6, 7, 3, '2024-01-10 10:00:00', '2034-01-10 10:00:00', 2, 1, N'Renewed driving license.', 1, 1, 20.0000),
-(7, 8, 3, '2024-02-14 12:00:00', '2033-02-10 11:15:00', 4, 2, N'Replacement for lost license.', 2, 1, 20.0000);
+(1, 1, 3, '2023-01-15 10:30:00', '2033-01-15 10:30:00', 1, 1, 'First time issuance.', 1, 0, 20.0000), -- Renewed by #6
+(2, 2, 3, '2023-02-10 11:15:00', '2033-02-10 11:15:00', 1, 2, 'Corrective lenses required.', 2, 0, 20.0000), -- Replaced by #7
+(3, 3, 1, '2023-03-05 09:45:00', '2028-03-05 09:45:00', 1, 3, 'Small motorcycle.', 3, 1, 15.0000),
+(4, 4, 3, '2023-04-12 14:20:00', '2033-04-12 14:20:00', 1, 4, 'Standard vehicle license.', 1, 1, 20.0000),
+(5, 5, 2, '2023-05-18 08:30:00', '2028-05-18 08:30:00', 1, 5, 'Heavy motorcycle certified.', 2, 1, 30.0000),
+(6, 7, 3, '2024-01-10 10:00:00', '2034-01-10 10:00:00', 2, 1, 'Renewed driving license.', 1, 1, 20.0000),
+(7, 8, 3, '2024-02-14 12:00:00', '2033-02-10 11:15:00', 4, 2, 'Replacement for lost license.', 2, 1, 20.0000);
 SET IDENTITY_INSERT DrivingLicenses OFF;
 
 INSERT INTO LicenseServiceOrders (OrderID, OldLicenseID) VALUES
@@ -353,20 +353,20 @@ UPDATE TestAppointments SET RetakeTestOrderID = 6 WHERE AppointmentID = 5;
 
 SET IDENTITY_INSERT Tests ON;
 INSERT INTO Tests (TestID, TestAppointmentID, TestResult, Notes, CreatedBy, TestDate) VALUES
-(1, 1, 1, N'Vision passed.', 1, '2023-01-05 09:20:00'),
-(2, 2, 1, N'Theory score: 96/100.', 1, '2023-01-10 10:35:00'),
-(3, 3, 1, N'Practical exam passed.', 1, '2023-01-15 10:15:00'),
-(4, 4, 0, N'Failed vision acuity.', 3, '2023-02-20 09:15:00'),
-(5, 5, 1, N'Vision passed with glasses.', 3, '2023-02-26 09:45:00'),
-(6, 6, 1, N'Theory score: 88/100.', 3, '2023-03-01 11:30:00'),
-(7, 7, 1, N'Practical exam passed.', 3, '2023-03-05 09:30:00'),
-(8, 8, 1, N'Vision passed.', 3, '2024-06-03 09:15:00');
+(1, 1, 1, 'Vision passed.', 1, '2023-01-05 09:20:00'),
+(2, 2, 1, 'Theory score: 96/100.', 1, '2023-01-10 10:35:00'),
+(3, 3, 1, 'Practical exam passed.', 1, '2023-01-15 10:15:00'),
+(4, 4, 0, 'Failed vision acuity.', 3, '2023-02-20 09:15:00'),
+(5, 5, 1, 'Vision passed with glasses.', 3, '2023-02-26 09:45:00'),
+(6, 6, 1, 'Theory score: 88/100.', 3, '2023-03-01 11:30:00'),
+(7, 7, 1, 'Practical exam passed.', 3, '2023-03-05 09:30:00'),
+(8, 8, 1, 'Vision passed.', 3, '2024-06-03 09:15:00');
 SET IDENTITY_INSERT Tests OFF;
 
 SET IDENTITY_INSERT DetainedLicenses ON;
 INSERT INTO DetainedLicenses (DetainID, LicenseID, DetainDate, FineFees, CreatedBy, ReleasedBy, IsReleased, ReleaseDate, ReleaseOrderID, DetainReason) VALUES
-(1, 3, '2024-03-20 14:00:00', 100.0000, 1, 1, 1, '2024-04-05 15:45:00', 9, N'Exceeding speed limit.'),
-(2, 4, '2024-05-02 08:30:00', 250.0000, 1, NULL, 0, NULL, NULL, N'Driving without safety permit.');
+(1, 3, '2024-03-20 14:00:00', 100.0000, 1, 1, 1, '2024-04-05 15:45:00', 9, 'Exceeding speed limit.'),
+(2, 4, '2024-05-02 08:30:00', 250.0000, 1, NULL, 0, NULL, NULL, 'Driving without safety permit.');
 SET IDENTITY_INSERT DetainedLicenses OFF;
 
 SET IDENTITY_INSERT InternationalLicenses ON;
