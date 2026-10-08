@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Presentation Layer/Presentation Layer.csproj" Id="eb4b3db6-948c-4ec0-84bf-c1dbfa129a7c" />
+  <Project Path="TestingLayer/TestingLayer.csproj" Id="d01cf88f-5629-46d2-8bdb-6c12af16e1a9" />
+</Solution>
